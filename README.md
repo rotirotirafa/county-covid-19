@@ -1,4 +1,4 @@
-# COYNTY COVID-19 - API
+# COUNTY COVID-19 - API
 
 Esta Api foi desenvolvida utilizando [AdonisJS](https://adonisjs.com/).
 
