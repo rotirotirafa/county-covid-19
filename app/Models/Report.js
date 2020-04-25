@@ -5,7 +5,7 @@ const Model = use('Model')
 
 class Report extends Model {
     townHall () {
-        return this.hasOne('App/Models/TownHall')
+        return this.belongsTo('App/Models/TownHall')
     }
 }
 

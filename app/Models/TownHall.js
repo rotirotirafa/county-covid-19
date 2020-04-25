@@ -5,10 +5,10 @@ const Model = use('Model')
 
 class TownHall extends Model {
     city () {
-        return this.hasOne('App/Models/City')
+        return this.belongsTo('App/Models/City')
     }
     user () {
-        return this.hasOne('App/Models/User')
+        return this.belongsTo('App/Models/User')
     }
 }
 

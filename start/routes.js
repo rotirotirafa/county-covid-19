@@ -19,3 +19,8 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 Route.resource('/users', 'UserController');
+Route.resource('/states', 'StateController');
+Route.resource('/cities', 'CityController');
+
+Route.resource('/reports', 'CityController');
+Route.resource('/townhall', 'TownHallController');

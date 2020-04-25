@@ -5,8 +5,9 @@ const Model = use('Model')
 
 class City extends Model {
     state () {
-        return this.hasOne('App/Models/State')
+        return this.belongsTo('App/Models/State')
     }
+
 }
 
 module.exports = City
