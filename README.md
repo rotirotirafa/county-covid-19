@@ -1,31 +1,41 @@
-# Adonis fullstack application
+# COYNTY COVID-19 - API
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
-
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+Esta Api foi desenvolvida utilizando [AdonisJS](https://adonisjs.com/).
 
 ## Setup
 
-Use the adonis command to install the blueprint
+Faça o clone deste projeto
 
 ```bash
-adonis new yardstick
+git clone git@github.com:rotirotirafa/county-covid-19.git
 ```
 
-or manually clone the repo and then run `npm install`.
+entre na pasta `cd county-covid-19` e instale as dependencias necessárias `npm install` ou `yarn`.
 
 
-### Migrations
+### Configure o banco de dados.
 
-Run the following command to run startup migrations.
+Foi utilizado o [Postgres](https://www.postgresql.org/) e o Node utiliza o pacote `pg` para comunicar a Api com o Postgres [pg](https://www.npmjs.com/package/pg). Então rode `npm install pg --save-dev` ou `yarn add pg`.
+
+Crie o banco de dados `county_covid`
+
+*** Certifique-se de que você tenha um usuário do banco de dados com permissão de acesso ao `county_covid` ***
+
+Na raíz do projeto, no arquivo `.env` altere os seguintes dados:
+
+
+```.env
+DB_CONNECTION=pg
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_USER=YOUR_USERNAME
+DB_PASSWORD=YOUR_PASSWORD
+DB_DATABASE=county_covid
+```
+Após realizar a conexão com o Banco de dados, para criar as tabelas digite no terminal:
 
 ```js
 adonis migration:run
 ```
+
+Rode o projeto com: `yarn dev` ou `adonis serve`
