@@ -9,6 +9,7 @@ class StateSchema extends Schema {
       table.increments()
       table.string('initials', 2).notNullable().unique()
       table.string('name', 50).notNullable()
+      table.string('slug', 50)
       table.timestamps()
     })
   }

@@ -2,6 +2,8 @@
 
 const State = use('App/Models/State')
 
+const slug = use('limax');
+
 class StateController {
     async index () {
         const states = await State.all();
@@ -9,7 +11,8 @@ class StateController {
     }
 
     async store ({ request }) {
-        const data = request.all()
+        const data = request.all();
+        data.slug = slug(data.name);
         const state = await State.create(data)
         return state
     }

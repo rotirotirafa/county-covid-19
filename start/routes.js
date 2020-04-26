@@ -21,8 +21,8 @@ Route.on('/').render('welcome')
 
 Route.post('/users/authenticate', 'UserController.authenticate');
 
-Route.resource('/users', 'UserController').middleware('auth');
-Route.resource('/states', 'StateController').middleware('auth');
-Route.resource('/cities', 'CityController').middleware('auth');
-Route.resource('/reports', 'ReportController').middleware('auth');
-Route.resource('/townhall', 'TownHallController').middleware('auth');
+Route.resource('/users', 'UserController');
+Route.resource('/states', 'StateController');
+Route.resource('/cities', 'CityController');
+Route.resource('/reports', 'ReportController');
+Route.resource('/townhall', 'TownHallController');

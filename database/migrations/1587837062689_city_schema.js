@@ -8,6 +8,7 @@ class CitySchema extends Schema {
     this.create('cities', (table) => {
       table.increments()
       table.string('name', 255).notNullable()
+      table.string('slug', 255)
       table.integer('habitants')
       table.integer('state_id').unsigned().references('id').inTable('states')
       table.timestamps()

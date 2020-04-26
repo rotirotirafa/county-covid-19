@@ -1,6 +1,8 @@
 'use strict'
 
-const City = use('App/Models/City')
+const City = use('App/Models/City');
+
+const slug = use('limax');
 
 class CityController {
     async index () {
@@ -8,7 +10,8 @@ class CityController {
     }
 
     async store ({ request }) {
-        const data = request.all()
+        const data = request.all();
+        data.slug = slug(data.name);
         const city = await City.create(data)
         return city
     }
