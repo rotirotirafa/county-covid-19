@@ -2,20 +2,28 @@
 
 const Report = use('App/Models/Report')
 
+const Database = use('Database')
+
 class ReportController {
     async index () {
-        return await Report.query().with('townhall').fetch();
+        return await Report.query().with('townHall').fetch();
     }
 
     async store ({ request }) {
-        const data = request.all()
+        const data = request.all();
         const report = await Report.create(data)
+        return report
+    }    
+
+    async show ({ params }) {
+        const report = await Report.findOrFail(params.id)
         return report
     }
 
-    async show ({ params }) {
-        const reports = await Report.findOrFail(params.id)
-        return reports
+    async getTownReport ({ params }) {
+        const report = await Report.findOrFail(params.id)
+        await report.load('townHall');
+        return report;
     }
 
     async update ({ params, request }) {

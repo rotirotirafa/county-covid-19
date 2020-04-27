@@ -21,6 +21,8 @@ Route.on('/').render('welcome')
 
 Route.post('/users/authenticate', 'UserController.authenticate');
 
+Route.get('/reports/townhalls/:id', 'ReportController.getTownReport');
+
 Route.resource('/users', 'UserController');
 Route.resource('/states', 'StateController');
 Route.resource('/cities', 'CityController');
